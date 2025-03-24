@@ -9,6 +9,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <header className="header-container">
       <h1>{title}</h1>
+      <div className="user-icon">RV</div>
     </header>
   );
 };

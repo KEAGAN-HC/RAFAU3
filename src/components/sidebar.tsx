@@ -8,10 +8,14 @@ const Sidebar: React.FC = () => {
       <div className="logo">MarketinIA</div>
       <nav className="nav-menu">
         <Link to="/">Dashboard</Link>
-        <Link to="/mapa">Cultivos del Sur</Link>
-        <Link to="/salir">Salir</Link>
+        <Link to="/parcelasEliminadas">PArcelas Eliminadas</Link>
+        <div className="navigation-section">
+        <Link to="/charts">
+          Ver Gráficas Históricas
+        </Link>
+        <div>        <Link to="/salir">Salir</Link>         </div>
+      </div>
       </nav>
-      <div className="user-icon">RV</div>
     </div>
   );
 };
