@@ -13,7 +13,6 @@ const Sidebar: React.FC = () => {
         <Link to="/charts">
           Ver Gráficas Históricas
         </Link>
-        <div>        <Link to="/salir">Salir</Link>         </div>
       </div>
       </nav>
     </div>

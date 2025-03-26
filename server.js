@@ -14,12 +14,12 @@ const supabase = createClient(
 
 app.get('/sync', async (req, res) => {
   try {
-    const { data } = await axios.get('http://moriahmkt.com/iotapp/');
+    const { data } = await axios.get('https://moriahmkt.com/iotapp/test/');
 
     const sensoresGlobales = data.sensores;
     const parcelas = data.parcelas;
 
-    // 1. Insertar sensores globales si han cambiado
+    // inserta los datos si cambian (globales)
     const { data: lastGlobal } = await supabase
       .from('historial_global')
       .select('*')
@@ -40,10 +40,8 @@ app.get('/sync', async (req, res) => {
       console.log("🔁 Sensores globales sin cambios");
     }
 
-    // Lista de nombres de parcelas activas desde la API
     const activeParcelNames = parcelas.map(p => p.nombre);
 
-    // 2. Procesar parcelas y guardar sus sensores si cambian
     for (const parcela of parcelas) {
       try {
         const { data: existingParcela } = await supabase
@@ -75,14 +73,13 @@ app.get('/sync', async (req, res) => {
           parcelaId = insert.id;
           console.log(`✅ Parcela '${parcela.nombre}' insertada`);
         } else {
-          // Actualiza la información de la parcela en caso de cambios
           await supabase
             .from('parcelas')
             .update({
               ubicacion: parcela.ubicacion,
               tipo_cultivo: parcela.tipo_cultivo,
               responsable: parcela.responsable,
-              status: true // Si se recibe, se reactivan
+              status: true 
             })
             .eq('id', parcelaId);
         }

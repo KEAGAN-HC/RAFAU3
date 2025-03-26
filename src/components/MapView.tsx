@@ -19,7 +19,7 @@ const MapView: React.FC = () => {
   useEffect(() => {
     const fetchParcelas = async () => {
       try {
-        const response = await axios.get("http://moriahmkt.com/iotapp/");
+        const response = await axios.get("https://moriahmkt.com/iotapp/test/");
         const { parcelas } = response.data;
         setParcelas(parcelas);
       } catch (error) {

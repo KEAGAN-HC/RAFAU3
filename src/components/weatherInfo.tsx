@@ -21,7 +21,7 @@ const WeatherInfo: React.FC = () => {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const response = await axios.get<ApiResponse>("http://moriahmkt.com/iotapp/");
+        const response = await axios.get<ApiResponse> ("https://moriahmkt.com/iotapp/test/");
         
         console.log("✅ Respuesta completa de la API:", response.data);
         console.log("🌤️ Sensores globales usados:", response.data.sensores);
