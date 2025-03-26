@@ -60,14 +60,13 @@
 /* css de la sidebar*/
 
 .sidebar-container {
-  background-color: #41ab5d;
+  background-color: #ad3044;
   color: #fff;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   box-sizing: border-box;
   width: 170px;   
-  border-bottom: 100px coral;    
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
               rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
               rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;     
@@ -130,9 +129,8 @@
 /* css del header*/
 
 .header-container {
-  background-color: #005a32;
+  background-color: #802231;
   padding: 0.5rem;
-  border-bottom: 1px solid #ccc;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
               rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
               rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;   
@@ -170,71 +168,80 @@
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:.5rem;
+  gap:.2rem;
+  margin-top: 5rem;
+  justify-content: center;
+
+
 }
 /* css del coso del clima*/
 
 .weather-card {
-  background-color: #ffffff;
+  background-color: #ad3044;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
   margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   grid-template-columns: repeat(2, 1fr);
   width: 250px;
-  height: 100px;
+  height: 200px;
   flex: auto;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgb(51, 51, 51) 0px 7px 29px 0px;
+  
     }
 
 .weather-card h3 {
   margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 
 .weather-card p {
   margin: 0;
   font-size: 2rem;
   font-weight: bold;
+  font-size: 3rem;
+  color: #fff;
 }
 
 /*css del footer*/
 
 .footer-container {
-  background-color: #005a32;
+  background-color: #353535;
   text-align: center;
   padding: 0.5rem;
-color: #fff;
-  border-top: 1px solid #ccc;
+  color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
               rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
               rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;   
 }
 
 .charts-container {
-  display: flex;
-  flex-wrap: wrap;       
-  gap: 1rem;            
-  justify-content: center; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: .5rem;
   margin-top: 1rem;
+  margin-right: .5rem;
 }
+
 
 .chart-card {
-  background-color: #edf8e9; 
+  background-color: #ffffff; 
   border-radius: 20px;
-  padding: 1rem;
-  height: 500px;
+  padding: .8rem;
+  height: 400px;
   text-align: center;
   margin: 1rem;
-  width: 1000px;            /* Ajusta según tu preferencia */
+  width: 90%;   
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
               rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-              rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+              rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;          
 }
 
-/* Ajustar el canvas para que ocupe todo el ancho disponible sin deformar la gráfica */
 .chart-card canvas {
   width: 100% !important;
-  height: auto !important;
+  height: 90% !important;
 }
+
 

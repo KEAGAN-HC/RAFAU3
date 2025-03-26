@@ -38,7 +38,6 @@ const HistoricalCharts: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
-
   useEffect(() => {
     const fetchHistoricalData = async () => {
       try {
@@ -58,11 +57,14 @@ const HistoricalCharts: React.FC = () => {
   if (loading) return <p>Cargando datos históricos...</p>;
   if (error) return <p>{error}</p>;
 
-  const labels = historicalData.map(record =>
+  // Limitar a los últimos 15 registros
+  const last15Data = historicalData.slice(-15);
+
+  const labels = last15Data.map(record =>
     new Date(record.fecha_hora).toLocaleTimeString()
   );
-  const tempData = historicalData.map(record => record.temperatura);
-  const humidityData = historicalData.map(record => record.humedad);
+  const tempData = last15Data.map(record => record.temperatura);
+  const humidityData = last15Data.map(record => record.humedad);
 
   const lineChartData = {
     labels,
@@ -88,14 +90,15 @@ const HistoricalCharts: React.FC = () => {
     ]
   };
 
-  const lastRecord = historicalData[historicalData.length - 1];
+ 
+  const lastRecord = last15Data[last15Data.length - 1];
   const stackedBarData = {
     labels: ['Último Registro'],
     datasets: [
       {
         label: 'Lluvia (mm)',
         data: [lastRecord.lluvia],
-        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+        backgroundColor: 'rgba(180, 255, 119, 0.7)',
         stack: 'clima',
       },
       {
